@@ -5,11 +5,15 @@
       "src": "coursespage/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "includeFiles": ["vendor/**"]
+        "runtime": "python3.9"
       }
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "coursespage/wsgi.py" }
-  ]
+    {
+      "src": "/(.*)",
+      "dest": "coursespage/wsgi.py"
+    }
+  ],
+  "buildCommand": "pip install pymysql"
 }
