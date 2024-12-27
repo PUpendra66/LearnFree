@@ -1,7 +1,9 @@
-FROM python:3.12-slim
+FROM python:3.9-slim
 
 # Install system dependencies for mysqlclient
-RUN apt-get update && apt-get install -y libmysqlclient-dev gcc pkg-config
+RUN apt-get update && apt-get install -y gcc && \
+    pip install --no-cache-dir -r requirements.txt && \
+    apt-get purge -y --auto-remove gcc
 
 # Set working directory
 WORKDIR /app
