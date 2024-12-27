@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/coursed.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="">LearnFree</a></div>
+            <ul class="links">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'courses' %}">Courses</a></li>
+
+
+              
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'admin:index' %}">Admin</a>
+
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+                <li><a href="{% url 'about' %}">About Us </a></li>
+
+                
+            </ul>
+            
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'courses' %}">Courses</a></li>
+
+            </li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'admin:index' %}">Admin</a>
+
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+            <li><a href="{% url 'about' %}">About Us </a></li>
+
+        </div>
+    </header>
+    <main>
+    <h1>{{ course.title }}</h1>
+    <section>
+        <center>
+    <img src="{{ course.image.url }}" alt="{{ course.title }}" style="width: 20%;; height:20%; align-items: center;">
+        </center>
+    <p> {{ course.description }}</p>
+    <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+    <p><strong>Price:  </strong>  ₹{{ course.price }}</p>
+    <p><strong>Duration:</strong> {{ course.duration }}</p>
+</section>
+</main>
+<footer class="footer">
+    <p>&copy; 2024 LearnFree. All rights reserved.</p></footer>
+<script>
+    const toggleBtn= document.querySelector('.toggle_btn')
+    const toggleBtnIcon= document.querySelector('.toggle_btn i ')
+    const dropdownmenu= document.querySelector('.dropdown_menu')
+    toggleBtn.onclick = function  () {
+        dropdownmenu.classList.toggle('open')
+        const isOpen=dropdownmenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+    }
+</script>
+    
+</body>
+</html>

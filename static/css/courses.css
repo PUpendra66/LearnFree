@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #0f0f0f;
+
+
+
+}
+
+li {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1rem;
+
+}
+
+a:hover {
+    color: #030303;
+
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+    background: linear-gradient(171.8deg, rgb(5, 111, 146) 13.5%, rgb(6, 57, 84) 78.6%);
+    background-repeat: no-repeat;
+}
+
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* .action_btn{
+    background-color: rgb(158, 209, 243);
+    color: #fff;
+    padding: 1rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2sec;
+    margin: 20px;
+
+}
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+
+}
+.action_btn:active{
+    scale: 0.95;
+
+} */
+/* hero */
+
+section#hero {
+    /* height: calc(100vh - 90px ); */
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin-bottom: 3rem;
+    color: #fff;
+    font-family: "Open Sans", serif;
+
+}
+.hero p{
+    font-family: "Open Sans", serif;
+    font-size: 15px;
+    margin: 2%;
+    
+}
+
+.action {
+    margin: 3%;
+   
+}
+
+.action_btn {
+    background-color: rgb(32, 101, 146);
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: scale 0.2sec;
+    margin: 20px;
+
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
+
+}
+
+.action_btn:active {
+    scale: 0.95;
+
+}
+.h3{
+    font-size: 30px;
+    margin-bottom: 3rem;
+    color: #fff;
+    font-family: "Open Sans", serif;
+    align-items: center;
+    text-align: center;
+}
+
+ .card-container {
+    display: flex;
+    flex-direction: row;
+   
+    column-gap: 40px;
+    flex-wrap: wrap;
+    margin: 20px;
+} 
+/* .card {
+    width: 30%;
+    /* max-width: 380px; Restricts the max size 
+    height: auto;
+} */
+
+/* .card-container {
+    
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    margin: 20px;
+} */
+
+
+/* .card-content h3 a:hover {
+    color: #ffd700; /* Gold color on hover */
+/* } */
+
+/* .card-content .btn:hover {
+    background-color: #555;
+    color: #fff;
+}
+.card-content .btn {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #007bff; 
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.card-content .btn:hover {
+    background-color: #0056b3; 
+}
+.card-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;  
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-content {
+    padding: 20px;
+    color: #fff;
+}
+
+.card-content h3 a {
+    margin-bottom: 12px;
+} */ 
+
+
+
+
+ .card {
+    width: 380px;
+    height: 550px;
+    background-color: #000000d2;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px,4px rgba(122, 121, 121, 0.2);
+    margin: 30px ; 
+    
+
+     
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    /* width: 300px;  */
+    padding: 20px;
+    /* height: auto; */
+    box-shadow: 0 4px 8px rgba(15, 15, 15, 0.1);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-optical-sizing: auto;
+    margin: 30px;
+    /* text-align: justify;  */
+ }
+ /* .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(247, 244, 244, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+} */
+
+
+.card img {
+    width: 100%;
+    height: 40%;
+
+}
+
+.card-content {
+    padding: 12px;
+    text-align: justify;
+    justify-content: center;
+}
+
+.card-content h3 a{
+    font-size: 26px;
+   margin: 10px;
+   padding-bottom: 10px;
+    color: #fff;
+    
+
+
+}
+
+.card-content p {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.2;
+    /* text-overflow: ellipsis; */
+
+}
+.course-description {
+    width: 100%; /* Adjust the width as needed */
+    max-height: 100px; /* Set the maximum height of the description box */
+    overflow-y: auto; /* Enable vertical scrolling if the content exceeds the height */
+    padding: 8px;
+    border: 1px solid #000000; /* Optional: Add a border for visual separation */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #000000; /* Optional: Add a background color */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Optional: Customize the scrollbar */
+  .course-description::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .course-description::-webkit-scrollbar-thumb {
+    background: #000000; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded edges for the scrollbar */
+  }
+  
+  .course-description::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker thumb color on hover */
+  }
+
+.card-content .btn {
+    display:inline-block;
+    padding: 10px 50px;
+    background-color: #333;
+    border-radius: 4px;
+    margin: 40px 40px;
+    align-items: center;
+    justify-content: center;
+
+
+} 
+
+/* dropdown menu */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+
+    transition: height 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+}
+
+.dropdown_menu.open {
+    height: 240px;
+
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    height: 40px auto;
+    background: linear-gradient(171.8deg, rgb(5, 111, 146) 13.5%, rgb(6, 57, 84) 78.6%);
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 0 2rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.footer p {
+    font-size: 1rem;
+
+    padding: 10px;
+
+}
+
+
+/* responsive designe */
+@media(max-width: 992px) {
+
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+    section#hero {
+        height: calc(100vh - 20px );
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .hero h1 {
+        font-size: 60px;
+        margin-bottom: 5rem;
+        color: #fff;
+        font-family: "Open Sans", serif;
+    
+    }
+    .hero p{
+        font-family: "Open Sans", serif;
+        font-size: 20px;
+        margin: 10%;
+        
+    }
+    .action_btn {
+        margin: 20px;
+        
+    }
+
+    .dropdown_menu {
+        display: block;
+
+    }
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;   /* Center-align cards */
+        column-gap: 0;         /* Remove horizontal spacing */
+    }
+
+    .card {
+        width: 90%;            /* Reduce card width for smaller screens */
+        max-width: 400px;      /* Restrict max size */
+        margin: 20px 0;        /* Add vertical spacing */
+        height: auto;          /* Allow height to adjust to content */
+    }
+
+    .card img {
+        height: auto;          /* Let image height adjust */
+        max-height: 200px;     /* Optional: Restrict max height */
+    }
+
+    .card-content {
+        padding: 20px;         /* Add more padding for better readability */
+        text-align: center;    /* Center-align content for better presentation */
+    }
+
+    .card-content h3 a {
+        font-size: 24px;       /* Slightly smaller heading for compact look */
+    }
+
+    .card-content p {
+        font-size: 14px;       /* Adjust font size for readability */
+        line-height: 1.5;      /* Increase line spacing */
+    }
+
+    .card-content .btn {
+        padding: 10px 20px;    /* Adjust button size */
+        font-size: 16px;       /* Slightly larger font for buttons */
+    }
+}
+
+
+@media(max-width: 576px) {
+
+    section#hero {
+        height: calc(100vh - 20px );
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .hero h1 {
+        font-size: 60px;
+        margin-bottom: 5rem;
+        color: #fff;
+        font-family: "Open Sans", serif;
+    
+    }
+    .hero p{
+        font-family: "Open Sans", serif;
+        font-size: 15px;
+        margin: 10%;
+        
+    }
+    .action_btn {
+        padding-top: 10px;
+        /* margin: 10% 10px; */
+        
+    }
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+
+    }
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;    /* Center-align cards */
+        column-gap: 0;          /* Remove horizontal spacing */
+        row-gap: 20px;          /* Add spacing between rows */
+    }
+    
+    .card {
+        width: 95%;             /* Make cards almost full-width */
+        margin: 15px 0;         /* Add vertical spacing */
+        height: auto;           /* Allow height to adjust to content */
+    }
+    
+    .card img {
+        height: auto;           /* Let image height adjust dynamically */
+        max-height: 150px;      /* Optional: Restrict max height */
+    }
+    
+    .card-content {
+        padding: 16px;          /* Slightly reduce padding */
+        text-align: center;     /* Center-align content */
+    }
+    
+    .card-content h3 a {
+        font-size: 20px;        /* Reduce heading size */
+    }
+    
+    .card-content p {
+        font-size: 13px;        /* Smaller font size for descriptions */
+        line-height: 1.4;       /* Adjust line spacing */
+    }
+    
+    .card-content .btn {
+        padding: 8px 16px;      /* Smaller button size */
+        font-size: 14px;        /* Adjust button font size */
+    }
+    
+}
+
+
+.h1 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+
+ .h1{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 5rem;
+    font-family: "Open Sans", serif;
+ }

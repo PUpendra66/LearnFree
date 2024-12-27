@@ -1,0 +1,60 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <h1>Custom Admin Dashboard</h1>
+    <form method="post" class="form-inline">
+        {% csrf_token %}
+        <fieldset class="module aligned">
+            <div class="form-row">
+                <label for="id_title">Title:</label>
+                <input type="text" name="title" id="id_title" required>
+            </div>
+            <div class="form-row">
+                <label for="id_description">Description:</label>
+                <textarea name="description" id="id_description" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="id_instructor">Instructor:</label>
+                <input type="text" name="instructor" id="id_instructor" required>
+            </div>
+            <div class="form-row">
+                <label for="id_price">Price:</label>
+                <input type="number" name="price" id="id_price" required>
+            </div>
+            <div class="form-row">
+                <label for="id_duration">Duration:</label>
+                <input type="text" name="duration" id="id_duration" required>
+            </div>
+        </fieldset>
+        <div class="submit-row">
+            <input type="submit" value="Add Course" class="default">
+        </div>
+    </form>
+
+    <h2>Existing Courses</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Instructor</th>
+                <th>Price</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.title }}</td>
+                <td>{{ course.description }}</td>
+                <td>{{ course.instructor }}</td>
+                <td>{{ course.price }}</td>
+                <td>{{ course.duration }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

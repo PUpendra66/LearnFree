@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="{% url 'index' %}">LearnFree</a></div>
+            <ul class="links">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'courses' %}">Courses</a></li>
+
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+                <li><a href="{% url 'about' %}">About Us </a></li>
+
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'courses' %}">Courses</a></li>
+
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+            <li><a href="{% url 'about' %}">About Us </a></li>
+
+        </div>
+    </header>
+        <h3 style="color: rgb(254, 255, 255); font-size: 28px; text-align: center; margin-top: 25px;">Welcome  , {{ user.username }}</h3>
+     <main >
+        <section class="profile-card">
+            <div class="profile-image">
+                {% if profile.avatar %}
+                    <img src="{{ profile.avatar.url }}" alt="Profile Photo" style="width:150px;height:150px;border-radius:50%;">
+               
+                {% else %}
+                    <img src="https://via.placeholder.com/150" alt="Default Avatar">
+                {% endif %}
+            </div>
+            <div class="profile-details">
+                <h2>{{ user.username }}</h2>
+                <p class="email">{{ user.email }}</p>
+                <!-- {% if profile.bio %}
+                    <p class="bio">{{ profile.bio }}</p>
+                {% else %}
+                    <p class="bio">No bio available</p>
+                {% endif %} -->
+                
+                <button class="btn-edit" id="editProfileBtn">Edit Profile</button>
+                <a href="{% url 'enrolled_courses' %}" class="btn-edit">Enrolled Courses</a>
+            </div>
+        </section>
+        <center>
+        <section class="edit-profile-form" id="editProfileSection" style="display: none;">
+            <h2 >Edit Profile</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    {{ user_form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    {{ user_form.email }}
+                </div>
+                <!-- <div class="form-group">
+                    <label for="bio">Bio</label>
+                    {{ profile_form.bio }}
+                </div> -->
+                <div class="form-group">
+                    <label for="avatar">Profile Image</label>
+                    {% if profile_form.avatar.value %}
+                        <img src="{{ profile_form.avatar.value.url }}" alt="Profile Image" class="avatar-preview">
+                    {% endif %}
+                    {{ profile_form.avatar }}
+                </div>
+                <button type="submit" class="btn-save">Save Changes</button>
+            </form>
+            <button class="btn-cancel" id="cancelEditBtn">Cancel</button>
+        </section>
+        </center>
+     
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 LearnFree. All rights reserved.</p>
+    </footer>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const dropdownMenu = document.querySelector('.dropdown_menu');
+        toggleBtn.onclick = () => dropdownMenu.classList.toggle('open');
+        const editProfileBtn = document.getElementById('editProfileBtn');
+        const editProfileSection = document.getElementById('editProfileSection');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+
+        editProfileBtn.addEventListener('click', function() {
+            document.querySelector('.profile-card').style.display = 'none';
+            editProfileSection.style.display = 'block';
+        });
+
+        cancelEditBtn.addEventListener('click', function() {
+            document.querySelector('.profile-card').style.display = 'block';
+            editProfileSection.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
