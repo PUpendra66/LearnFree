@@ -95,7 +95,9 @@ WSGI_APPLICATION = 'coursespage.wsgi.application'
 
 DATABASES = {
     "default": dj_database_url.parse(
-        os.environ.get("DATABASE_URL")
+        os.getenv("DATABASE_URL", "sqlite:///db.sqlite3"),
+        conn_max_age=600,
+        ssl_require=True,
     )
 }
 
