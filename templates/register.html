@@ -20,11 +20,12 @@
   
   
 <main>
-  <h2 style="color: rgb(248, 244, 244); text-align: center;">Registration</h2>
   
   <div class="wrapper">
     <form method="post">
       {% csrf_token %}
+      <h2 style="color:rgb(5, 111, 146); text-align: center; font-size: 30PX; ">Registration</h2>
+
       <div class="input-box">
         <input type="text" placeholder="Enter your name" required name="username">
       </div>
@@ -34,7 +35,7 @@
       <div class="input-box">
         <input type="password" placeholder="Create password" required name="password">
       </div>
-      <div class="input-box-img">
+      <div class="input-box">
         <input type="file" placeholder="select you Image" required name="profile">
       </div>
       <div class="policy">

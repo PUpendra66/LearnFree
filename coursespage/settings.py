@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import pymysql
 pymysql.install_as_MySQLdb()
+import dj_database_url
 
 
 
@@ -81,17 +82,19 @@ WSGI_APPLICATION = 'coursespage.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'localhost',  
-        'PORT': '3307',       
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mydatabase',
+#         'USER': 'myuser',
+#         'PASSWORD': 'mypassword',
+#         'HOST': 'localhost',  
+#         'PORT': '3307',       
+#     }
+# }
+DATABASES={
+    "default" : dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 
 # Password validation
@@ -129,8 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 STATICFILES_DIRS=[
