@@ -79,3 +79,6 @@ urllib3==2.2.2
 webencodings==0.5.1
 yarl==1.18.0
 zopfli==0.2.3
+psycopg2
+dj-database-url
+gunicorn
