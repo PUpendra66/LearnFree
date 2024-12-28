@@ -20,6 +20,7 @@ from course.custom_admin import admin_site
 from course.views import *
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),  
     path('myadmin/', admin_site.urls),
@@ -36,4 +37,5 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('change-password/', CustomPasswordChangeView.as_view(template_name='registration/change_password.html'), name='change_password'),
 ]
+urlpatterns+=staticfiles_urlpatterns()
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -92,12 +92,11 @@ WSGI_APPLICATION = 'coursespage.wsgi.application'
 #         'PORT': '3307',       
 #     }
 # }
-import dj_database_url
-import os
+
 
 DATABASES = {
     "default": dj_database_url.parse(
-        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+        os.environ.get("DATABASE_URL")
     )
 }
 
