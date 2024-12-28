@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-e*6p!d%q)p9zvcvjwh4w+pa=b9&-6s+mx*5*6+zcgmi4@4trd%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','learnfree.com','.vercel.app']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -92,9 +92,15 @@ WSGI_APPLICATION = 'coursespage.wsgi.application'
 #         'PORT': '3307',       
 #     }
 # }
-DATABASES={
-    "default" : dj_database_url.parse(os.environ.get("DATABASE_URL"))
+import dj_database_url
+import os
+
+DATABASES = {
+    "default": dj_database_url.parse(
+        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+    )
 }
+
 
 
 # Password validation
