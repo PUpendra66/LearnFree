@@ -164,7 +164,7 @@ section#hero {
     display: flex;
     flex-direction: row;
    
-    column-gap: 40px;
+    column-gap: 30px;
     flex-wrap: wrap;
     margin: 20px;
 } 
