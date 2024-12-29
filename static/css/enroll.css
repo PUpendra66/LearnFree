@@ -163,9 +163,9 @@ section#hero {
     display: flex;
     flex-direction: row;
    
-    column-gap: 40px;
+    column-gap: 25px;
     flex-wrap: wrap;
-    margin: 20px;
+    margin: 15px;
 } 
 .card {
     width: 380px;
