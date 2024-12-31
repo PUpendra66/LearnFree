@@ -162,11 +162,11 @@ section#hero {
 
  .card-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
    
-    column-gap: 25px;
+    column-gap: 40px;
     flex-wrap: wrap;
-    margin: 15px;
+    margin: 20px;
 } 
 /* .card {
     width: 30%;
