@@ -7,7 +7,7 @@
 
 body {
     height: 100vh;
-    background-color: #0f0f0f;
+    background-color: #000000;
 
 
 
@@ -162,32 +162,25 @@ section#hero {
 .card-container {
     display: flex;
     flex-direction: row;
-   
-    column-gap: 25px;
+    column-gap: 40px;
     flex-wrap: wrap;
-    margin: 15px;
+    margin: 20px auto;
 } 
-.card {
-    width: 380px;
-    height: 550px;
+
+
+ .card {
+    
+    width: 30%; /* Ensures three cards fit in a row on larger screens */
+    max-width: 380px; /* Restricts maximum width */
+    height: 550px; /* Keeps height consistent */
     background-color: #000000d2;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0px 2px,4px rgba(122, 121, 121, 0.2);
-    margin: 30px ; 
-    
-
-     
-
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    /* width: 300px;  */
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
     padding: 20px;
-    /* height: auto; */
-    box-shadow: 0 4px 8px rgba(15, 15, 15, 0.1);
-    font-family: "Questrial", sans-serif;
-    font-optical-sizing: auto;
-    margin: 30px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 10px; /* Adjust margin for balanced spacing */
+    text-align: justify;
     /* text-align: justify;  */
  }
  /* .card:hover {

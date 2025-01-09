@@ -74,7 +74,7 @@
                     <p><strong>Instructor:</strong> {{ course.instructor }}</p>
                     <p><strong>Price: </strong>  ₹{{ course.price }}</p>
                     {% if course.id in enrolled_courses %}
-                        <a href="{% url 'course_detail' course.id %}" class="btn">Already Enrolled</a>
+                        <a href="{% url 'course_detail' course.id %}" class="btn">Enrolled</a>
                     {% else %}
                         <a href="{% url 'enroll_course' course.id %}" class="btn">Enroll Now</a>
                     {% endif %}
