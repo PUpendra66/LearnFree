@@ -169,7 +169,7 @@ section#hero {
 } 
 
 
- .card {
+.card {
     
     width: 30%; /* Ensures three cards fit in a row on larger screens */
     max-width: 380px; /* Restricts maximum width */

@@ -7,14 +7,11 @@
 }
 body{
  
-
+  height: 100vh;
    display: flex;
   align-items: center;
   justify-content: center; 
-  background: linear-gradient(171.8deg, rgb(5, 111, 146) 13.5%, rgb(6, 57, 84) 78.6%);   
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: #000000;
   
 }
 .wrapper{

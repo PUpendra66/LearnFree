@@ -382,8 +382,8 @@ header {
 }
 
 .edit-profile-form .btn-save {
-    width: 50%;
-    padding: 8px;
+    
+    padding: 10px 20px;
     background-color: #123b77;
     color: white;
     border: none;
@@ -401,7 +401,8 @@ header {
     padding: 10px 20px;
     background-color: #1d5183;
     border: none;
-    border-radius: 5px;
+    color: white;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
 }
